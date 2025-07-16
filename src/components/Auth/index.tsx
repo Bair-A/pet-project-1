@@ -57,6 +57,15 @@ const Auth = () => {
           <button className={styles.loginButton} onClick={handleLogin}>
             Login
           </button>
+          <div className={styles.infoText}>
+            <span>
+              <i>name: </i> <strong>emilys</strong>
+            </span>
+            <span>
+              <i>pass: </i>
+              <strong>emilyspass</strong>
+            </span>
+          </div>
         </div>
       ) : (
         <button className={styles.logoutButton} onClick={logout}>

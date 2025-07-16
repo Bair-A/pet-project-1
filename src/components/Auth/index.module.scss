@@ -83,3 +83,13 @@
     cursor: not-allowed;
   }
 }
+
+.infoText {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
