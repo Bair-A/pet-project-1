@@ -47,7 +47,7 @@ const useAuthStore = create<AuthState>()(
             },
             {
               headers: { 'Content-Type': 'application/json' },
-              withCredentials: true
+              withCredentials: false
             }
           );
           set({ user: response.data, isAuthenticated: true });
