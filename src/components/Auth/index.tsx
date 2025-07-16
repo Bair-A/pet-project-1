@@ -57,12 +57,12 @@ const Auth = () => {
           <button className={styles.loginButton} onClick={handleLogin}>
             Login
           </button>
-          <div className={styles.infoText}>
+          <div className={styles.credentialsInfo}>
             <span>
-              <i>name: </i> <strong>emilys</strong>
+              <i className={styles.infoText}>name: </i> <strong>emilys</strong>
             </span>
             <span>
-              <i>pass: </i>
+              <i className={styles.infoText}>pass: </i>
               <strong>emilyspass</strong>
             </span>
           </div>

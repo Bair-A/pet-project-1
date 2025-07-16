@@ -42,6 +42,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  user-select: none;
 
   &:hover {
     background-color: var(--color-primary-hover);
@@ -69,6 +70,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  user-select: none;
 
   &:hover {
     background-color: var(--color-danger-hover);
@@ -84,7 +86,7 @@
   }
 }
 
-.infoText {
+.credentialsInfo {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
@@ -92,4 +94,8 @@
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.infoText {
+  user-select: none;
 }
