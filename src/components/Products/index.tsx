@@ -1,22 +1,12 @@
 'use client';
 
-import { useEffect } from 'react';
-
 import styles from './index.module.scss';
 import Loader from '@/components/Loader';
 import ProductCard from '@/components/ProductCard';
-import { useUser } from '@/store/auth';
-import { useIsLoading, useProducts, useProductsList } from '@/store/products';
+import { useProducts } from '@/hooks/useProducts';
 
 const Products = () => {
-  const fetchProducts = useProducts();
-  const user = useUser();
-  const isLoading = useIsLoading();
-  const products = useProductsList();
-
-  useEffect(() => {
-    fetchProducts(user?.token || '');
-  }, [fetchProducts, user?.token]);
+  const { products, isLoading } = useProducts();
 
   return (
     <div className={styles.container}>
@@ -25,7 +15,7 @@ const Products = () => {
         {isLoading ? (
           <Loader />
         ) : (
-          products.map(product => (
+          products?.map(product => (
             <ProductCard key={product.id} product={product} />
           ))
         )}

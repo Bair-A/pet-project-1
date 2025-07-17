@@ -5,6 +5,7 @@ import Content from '@/components/Content';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Layout from '@/components/Layout';
+import { QueryProvider } from '@/providers/QueryProvider';
 
 import './globals.scss';
 
@@ -31,11 +32,13 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Layout>
-          <Header />
-          <Content> {children}</Content>
-          <Footer />
-        </Layout>
+        <QueryProvider>
+          <Layout>
+            <Header />
+            <Content> {children}</Content>
+            <Footer />
+          </Layout>
+        </QueryProvider>
       </body>
     </html>
   );

@@ -51,3 +51,10 @@ export interface ProductsState {
     skip?: number
   ) => Promise<void>;
 }
+
+export type GetProductsResponse = {
+  products: Product[];
+  limit: number;
+  skip: number;
+  total: number;
+};
