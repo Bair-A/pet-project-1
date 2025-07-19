@@ -30,6 +30,34 @@
   }
 }
 
+.passwordInput {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.inputContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.loginInput {
+  position: relative;
+}
+
+.showPasswordButton {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-primary-hover);
+  }
+}
+
 .loginButton {
   width: 100%;
   max-width: 300px;

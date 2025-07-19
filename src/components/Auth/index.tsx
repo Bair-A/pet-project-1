@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import styles from './index.module.scss';
+import ClosedEye from '@/assets/icons/ClosedEye';
+import OpenedEye from '@/assets/icons/OpenedEye';
 import ErrorToast from '@/components/ErrorToast';
 import {
   useAuthErrorMessage,
@@ -18,6 +20,7 @@ import {
 const Auth = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const login = useLogin();
   const router = useRouter();
@@ -26,6 +29,10 @@ const Auth = () => {
   const clearError = useClearError();
   const isAuthenticated = useIsAuthenticated();
   const logout = useLogout();
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
 
   const handleLogin = async () => {
     await login({ username, password });
@@ -48,12 +55,21 @@ const Auth = () => {
             value={username}
             onChange={e => setUsername(e.target.value)}
           />
-          <input
-            className={styles.passwordInput}
-            type='password'
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
+          <div className={styles.inputContainer}>
+            <input
+              className={styles.passwordInput}
+              type={isPasswordVisible ? 'text' : 'password'}
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+            />
+            <button
+              className={styles.showPasswordButton}
+              onClick={togglePasswordVisibility}
+            >
+              {isPasswordVisible ? <OpenedEye /> : <ClosedEye />}
+            </button>
+          </div>
+
           <button className={styles.loginButton} onClick={handleLogin}>
             Login
           </button>
