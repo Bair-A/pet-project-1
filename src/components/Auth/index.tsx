@@ -16,10 +16,17 @@ import {
   useLogin,
   useLogout
 } from '@/store/auth';
+import { useForm } from 'react-hook-form';
+
+import { AuthCredentials } from '@/shared/types';
 
 const Auth = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<AuthCredentials>();
+
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const login = useLogin();
@@ -34,9 +41,9 @@ const Auth = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
 
-  const handleLogin = async () => {
-    await login({ username, password });
-  };
+  // const handleLogin = async () => {
+  //   await login({ username, password });
+  // };
 
   useEffect(() => {
     if (isError) setTimeout(clearError, 3500);
@@ -50,29 +57,40 @@ const Auth = () => {
     <div className={styles.wrapper}>
       {!isAuthenticated ? (
         <div className={styles.container}>
-          <input
-            className={styles.loginInput}
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-          />
-          <div className={styles.inputContainer}>
-            <input
-              className={styles.passwordInput}
-              type={isPasswordVisible ? 'text' : 'password'}
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-            <button
-              className={styles.showPasswordButton}
-              onClick={togglePasswordVisibility}
-            >
-              {isPasswordVisible ? <OpenedEye /> : <ClosedEye />}
-            </button>
-          </div>
+          <form
+            className={styles.form}
+            onSubmit={handleSubmit(data => login(data))}
+          >
+            <input className={styles.loginInput} {...register('username')} />
+            <div className={styles.inputContainer}>
+              <input
+                className={styles.passwordInput}
+                type={isPasswordVisible ? 'text' : 'password'}
+                {...register('password', {
+                  required: 'Please enter your password',
+                  minLength: { value: 8, message: 'Minimum 8 characters' },
+                  maxLength: { value: 20, message: 'Maximum 20 characters' }
+                })}
+              />
+              <button
+                className={styles.showPasswordButton}
+                type='button'
+                onClick={togglePasswordVisibility}
+              >
+                {isPasswordVisible ? <OpenedEye /> : <ClosedEye />}
+              </button>
+            </div>
+            <div className={styles.errorContainer}>
+              {' '}
+              {errors.password && (
+                <p style={{ color: 'red' }}>{errors.password.message}</p>
+              )}
+            </div>
 
-          <button className={styles.loginButton} onClick={handleLogin}>
-            Login
-          </button>
+            <button className={styles.loginButton} type='submit'>
+              Login
+            </button>
+          </form>
           <div className={styles.credentialsInfo}>
             <span>
               <i className={styles.infoText}>name: </i> <strong>emilys</strong>
