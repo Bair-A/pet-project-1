@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Layout from '@/components/Layout';
 import { QueryProvider } from '@/providers/QueryProvider';
+import { ClerkProvider } from '@clerk/nextjs';
 
 import './globals.scss';
 
@@ -30,16 +31,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <QueryProvider>
-          <Layout>
-            <Header />
-            <Content> {children}</Content>
-            <Footer />
-          </Layout>
-        </QueryProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang='en'>
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <QueryProvider>
+            <Layout>
+              <Header />
+              <Content>{children}</Content>
+              <Footer />
+            </Layout>
+          </QueryProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

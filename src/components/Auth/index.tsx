@@ -41,14 +41,6 @@ const Auth = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
 
-  // const handleLogin = async () => {
-  //   await login({ username, password });
-  // };
-
-  useEffect(() => {
-    if (isError) setTimeout(clearError, 3500);
-  }, [clearError, isError]);
-
   useEffect(() => {
     if (isAuthenticated) router.push('/');
   }, [isAuthenticated, router]);

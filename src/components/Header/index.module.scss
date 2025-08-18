@@ -75,3 +75,37 @@
     background-color: var(--color-danger-active);
   }
 }
+
+.signInButton,
+.signOutButton {
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signInButton {
+  background: var(--color-primary);
+
+  &:hover {
+    background: var(--color-primary-hover);
+  }
+
+  &:active {
+    background: var(--color-primary-active);
+  }
+}
+
+.signOutButton {
+  background: var(--color-danger);
+
+  &:hover {
+    background: var(--color-danger-hover);
+  }
+
+  &:active {
+    background: var(--color-danger-active);
+  }
+}
