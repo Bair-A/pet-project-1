@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { ThemeProvider } from 'next-themes';
+import { Montserrat } from 'next/font/google';
 
 import Content from '@/components/Content';
 import Footer from '@/components/Footer';
@@ -10,14 +11,10 @@ import { ClerkProvider } from '@clerk/nextjs';
 
 import './globals.scss';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin']
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin']
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
+  subsets: ['latin'],
+  weight: ['400', '500', '700']
 });
 
 export const metadata: Metadata = {
@@ -32,17 +29,19 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang='en'>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          <QueryProvider>
-            <Layout>
-              <Header />
-              <Content>{children}</Content>
-              <Footer />
-            </Layout>
-          </QueryProvider>
-        </body>
-      </html>
+      <ThemeProvider attribute='class' defaultTheme='system'>
+        <html lang='en'>
+          <body className={`${montserrat.variable}`}>
+            <QueryProvider>
+              <Layout>
+                <Header />
+                <Content>{children}</Content>
+                <Footer />
+              </Layout>
+            </QueryProvider>
+          </body>
+        </html>
+      </ThemeProvider>
     </ClerkProvider>
   );
 }

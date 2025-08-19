@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import styles from './index.module.scss';
+import ThemeToggle from '@/components/ThemeToggle';
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 
 const Header = () => {
@@ -14,6 +15,7 @@ const Header = () => {
       <SignedOut>
         <SignInButton mode={'modal'} />
       </SignedOut>
+      <ThemeToggle />
       <SignedIn>
         <UserButton />
       </SignedIn>
