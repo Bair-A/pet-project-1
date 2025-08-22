@@ -1,9 +1,11 @@
 .header {
   width: 100%;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  background-color: rgb(from var(--background) r g b / 0.6);
+  box-shadow: 0 2px 4px rgb(from var(--color-primary) r g b / 0.3);
   padding: 1rem;
-  z-index: 1000;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,6 +23,20 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.signButton {
+  color: var(--color-primary-text);
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 
 .userName {

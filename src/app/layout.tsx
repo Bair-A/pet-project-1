@@ -29,9 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <ThemeProvider attribute='class' defaultTheme='system'>
-        <html lang='en'>
-          <body className={`${montserrat.variable}`}>
+      <html lang='en'>
+        <body className={`${montserrat.variable}`}>
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            enableSystem
+            disableTransitionOnChange
+          >
             <QueryProvider>
               <Layout>
                 <Header />
@@ -39,9 +44,9 @@ export default function RootLayout({
                 <Footer />
               </Layout>
             </QueryProvider>
-          </body>
-        </html>
-      </ThemeProvider>
+          </ThemeProvider>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }

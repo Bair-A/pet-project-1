@@ -4,7 +4,13 @@ import Link from 'next/link';
 
 import styles from './index.module.scss';
 import ThemeToggle from '@/components/ThemeToggle';
-import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import {
+  SignInButton,
+  SignOutButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs';
 
 const Header = () => {
   return (
@@ -12,13 +18,20 @@ const Header = () => {
       <Link className={styles.logo} href='/'>
         Logo
       </Link>
-      <SignedOut>
-        <SignInButton mode={'modal'} />
-      </SignedOut>
-      <ThemeToggle />
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
+      <div className={styles.menu}>
+        <SignedOut>
+          <SignInButton mode={'modal'}>
+            <span className={styles.signButton}>Sign in</span>
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+          <SignOutButton redirectUrl={'./'}>
+            <span className={styles.signButton}>Sign out</span>
+          </SignOutButton>
+        </SignedIn>
+        <ThemeToggle />
+      </div>
     </header>
   );
 };
