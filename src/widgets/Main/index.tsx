@@ -1,8 +1,10 @@
 'use client';
 
 import styles from './index.module.scss';
-import HeaderSlider from '@/components/HeaderSlider';
-import Products from '@/components/Products';
+
+import HeaderSlider from '@/widgets/HeaderSlider';
+
+import Products from '../Products';
 
 const Main = () => {
   return (

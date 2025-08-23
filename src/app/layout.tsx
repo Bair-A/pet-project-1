@@ -2,12 +2,14 @@ import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { Montserrat } from 'next/font/google';
 
-import Content from '@/components/Content';
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import Layout from '@/components/Layout';
 import { QueryProvider } from '@/providers/QueryProvider';
 import { ClerkProvider } from '@clerk/nextjs';
+
+import Footer from '@/widgets/Footer';
+import Header from '@/widgets/Header';
+import Layout from '@/widgets/Layout';
+
+import Content from '../widgets/Content';
 
 import './globals.scss';
 

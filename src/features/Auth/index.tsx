@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 import styles from './index.module.scss';
 import ClosedEye from '@/assets/icons/ClosedEye';
 import OpenedEye from '@/assets/icons/OpenedEye';
-import ErrorToast from '@/components/ErrorToast';
 import {
   useAuthErrorMessage,
   useClearError,
@@ -19,6 +18,8 @@ import {
 import { useForm } from 'react-hook-form';
 
 import { AuthCredentials } from '@/shared/types';
+
+import ErrorToast from '../ErrorToast';
 
 const Auth = () => {
   const {

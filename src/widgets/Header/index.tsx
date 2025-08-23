@@ -3,7 +3,6 @@
 import Link from 'next/link';
 
 import styles from './index.module.scss';
-import ThemeToggle from '@/components/ThemeToggle';
 import {
   SignInButton,
   SignOutButton,
@@ -11,6 +10,8 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs';
+
+import ThemeToggle from '@/features/ThemeToggle';
 
 const Header = () => {
   return (
