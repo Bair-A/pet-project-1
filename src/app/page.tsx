@@ -1,5 +1,5 @@
-import Products from '@/components/Products';
+import Main from '../components/Main';
 
 export default function Home() {
-  return <Products />;
+  return <Main />;
 }
