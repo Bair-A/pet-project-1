@@ -1,0 +1,121 @@
+.card {
+  max-width: 280px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+}
+
+.image {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.discountBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #b10058;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 8px 10px;
+}
+
+.content {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.brand {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-align: center;
+  color: #555;
+}
+
+.priceWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0.5rem;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-primary-fixed);
+}
+
+.oldPrice {
+  font-size: 1rem;
+  color: #888;
+  text-decoration: line-through;
+}
+
+.inStock {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-success);
+  text-align: center;
+}
+
+.lowStock {
+  color: var(--color-danger);
+}
+
+.actions {
+  display: flex;
+  margin-top: 1rem;
+  gap: 0.5rem;
+
+  button {
+    flex: 1;
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+}
+
+.addToCart {
+  background: var(--color-success);
+  color: #fff;
+
+  &:hover {
+    background: #68b23b;
+  }
+}
+
+.buyNow {
+  background: #f2f2f2;
+  color: #333;
+
+  &:hover {
+    background: #e5e5e5;
+  }
+}

@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 import Loader from '@/components/Loader';
-import ProductCard from '@/components/ProductCard';
+import NewProductCard from '@/components/NewProductCart';
 import { useProducts } from '@/hooks/useProducts';
 
 const Products = () => {
@@ -11,7 +11,7 @@ const Products = () => {
         <Loader />
       ) : (
         products?.map(product => (
-          <ProductCard key={product.id} product={product} />
+          <NewProductCard key={product.id} product={product} />
         ))
       )}
     </div>

@@ -39,6 +39,7 @@ export interface Product {
   weight: number;
   thumbnail: string;
   images: string[];
+  availabilityStatus: string;
 }
 
 export interface ProductsState {
