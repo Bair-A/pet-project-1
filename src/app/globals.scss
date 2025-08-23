@@ -6,17 +6,19 @@
   --color-primary-hover: #005bb5;
   --color-primary-active: #003f7f;
 
-  --color-primary-text: #0d0d0d;
+  --color-primary-fixed: #0d0d0d;
 
-  --color-second-pimary: #22c55e;
-  --color-second-pimary-hover: #16a34a;
-  --color-second-pimary-active: #15803d;
+  --color-primary-text: #0d0d0d;
 
   --color-disabled: #ccc;
 
   --color-danger: #d9534f;
   --color-danger-hover: #b00000;
   --color-danger-active: #7a0000;
+
+  --color-success: #699d2a;
+  --color-success-hover: #1e874d;
+  --color-success-active: #16663a;
 }
 
 html.dark {
