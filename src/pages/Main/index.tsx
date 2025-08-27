@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 
 import HeaderSlider from '@/widgets/HeaderSlider';
 
-import Products from '../Products';
+import Products from '../../widgets/Products';
 
 const Main = () => {
   return (
