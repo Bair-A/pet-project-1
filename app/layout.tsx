@@ -5,11 +5,10 @@ import { Montserrat } from 'next/font/google';
 import { QueryProvider } from '@/providers/QueryProvider';
 import { ClerkProvider } from '@clerk/nextjs';
 
+import Content from '@/widgets/Content';
 import Footer from '@/widgets/Footer';
 import Header from '@/widgets/Header';
 import Layout from '@/widgets/Layout';
-
-import Content from '../widgets/Content';
 
 import './globals.scss';
 
