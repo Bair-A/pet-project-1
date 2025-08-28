@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import styles from './index.module.scss';
-import ClosedEye from '@/assets/icons/ClosedEye';
-import OpenedEye from '@/assets/icons/OpenedEye';
+import { useForm } from 'react-hook-form';
+
 import {
   useAuthErrorMessage,
   useClearError,
@@ -14,9 +14,10 @@ import {
   useIsAuthenticated,
   useLogin,
   useLogout
-} from '@/store/auth';
-import { useForm } from 'react-hook-form';
+} from '@/app/store/auth';
 
+import ClosedEye from '@/shared/assets/icons/ClosedEye';
+import OpenedEye from '@/shared/assets/icons/OpenedEye';
 import { AuthCredentials } from '@/shared/types';
 
 import ErrorToast from '../ErrorToast';

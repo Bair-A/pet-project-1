@@ -1,8 +1,8 @@
-import { PRODUCTS_PATH } from '@/constants';
 import axios from 'axios';
 import { persist } from 'zustand/middleware';
 import { create } from 'zustand/react';
 
+import { PRODUCTS_PATH } from '@/shared/constants';
 import { ProductsState } from '@/shared/types';
 
 const useProductsStore = create<ProductsState>()(

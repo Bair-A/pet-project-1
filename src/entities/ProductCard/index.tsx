@@ -3,11 +3,12 @@
 import { useMemo } from 'react';
 
 import styles from './index.module.scss';
-import FallBackImageIcon from '@/assets/icons/FallBackImageIcon';
-import { useIsAuthenticated } from '@/store/auth';
-import { formatPrice } from '@/utils';
 
+import { useIsAuthenticated } from '@/app/store/auth';
+
+import FallBackImageIcon from '@/shared/assets/icons/FallBackImageIcon';
 import { Product } from '@/shared/types';
+import { formatPrice } from '@/shared/utils';
 
 type ProductCardProps = {
   product: Product;

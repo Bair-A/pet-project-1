@@ -1,16 +1,12 @@
 import type { Metadata } from 'next';
-import { ThemeProvider } from 'next-themes';
 import { Montserrat } from 'next/font/google';
 
-import { QueryProvider } from '@/providers/QueryProvider';
 import { ClerkProvider } from '@clerk/nextjs';
 
-import Content from '@/widgets/Content';
-import Footer from '@/widgets/Footer';
-import Header from '@/widgets/Header';
-import Layout from '@/widgets/Layout';
+import { AppProviders } from '@/app/providers/AppProviders';
+import '@/app/styles/globals.scss';
 
-import './globals.scss';
+import Layout from '../src/widgets/Layout';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -32,20 +28,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en'>
         <body className={`${montserrat.variable}`}>
-          <ThemeProvider
-            attribute='class'
-            defaultTheme='system'
-            enableSystem
-            disableTransitionOnChange
-          >
-            <QueryProvider>
-              <Layout>
-                <Header />
-                <Content>{children}</Content>
-                <Footer />
-              </Layout>
-            </QueryProvider>
-          </ThemeProvider>
+          <AppProviders>
+            <Layout>{children}</Layout>
+          </AppProviders>
         </body>
       </html>
     </ClerkProvider>

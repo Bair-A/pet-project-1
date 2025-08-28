@@ -16,7 +16,7 @@ import ThemeToggle from '@/features/ThemeToggle';
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Link className={styles.logo} href='/'>
+      <Link className={styles.logo} href='/public'>
         Logo
       </Link>
       <div className={styles.menu}>

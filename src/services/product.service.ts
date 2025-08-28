@@ -1,6 +1,6 @@
-import { PRODUCTS_PATH } from '@/constants';
 import axios from 'axios';
 
+import { PRODUCTS_PATH } from '@/shared/constants';
 import { Product } from '@/shared/types';
 
 class ProductService {

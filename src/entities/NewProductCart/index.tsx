@@ -1,10 +1,10 @@
 'use client';
 
 import styles from './index.module.scss';
-import FallBackImageIcon from '@/assets/icons/FallBackImageIcon';
-import { formatPrice } from '@/utils';
 
+import FallBackImageIcon from '@/shared/assets/icons/FallBackImageIcon';
 import { Product } from '@/shared/types';
+import { formatPrice } from '@/shared/utils';
 
 type ProductCardProps = {
   product: Product;

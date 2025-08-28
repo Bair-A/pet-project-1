@@ -1,9 +1,6 @@
 import React from 'react';
 
 import styles from './index.module.scss';
-import slideImg1 from '@/assets/images/headerSlider/slide_1.webp';
-import slideImg2 from '@/assets/images/headerSlider/slide_2.webp';
-import slideImg3 from '@/assets/images/headerSlider/slide_3.webp';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
@@ -12,6 +9,10 @@ import 'swiper/css/scrollbar';
 import { A11y, Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+
+import slideImg1 from '@/shared/assets/images/headerSlider/slide_1.webp';
+import slideImg2 from '@/shared/assets/images/headerSlider/slide_2.webp';
+import slideImg3 from '@/shared/assets/images/headerSlider/slide_3.webp';
 
 const slides = [
   {

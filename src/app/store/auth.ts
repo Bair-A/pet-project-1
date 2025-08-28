@@ -1,8 +1,8 @@
-import { AUTH_PATH } from '@/constants';
 import axios from 'axios';
 import { persist } from 'zustand/middleware';
 import { create } from 'zustand/react';
 
+import { AUTH_PATH } from '@/shared/constants';
 import { AuthState } from '@/shared/types';
 
 const useAuthStore = create<AuthState>()(

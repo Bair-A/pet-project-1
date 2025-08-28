@@ -1,8 +1,9 @@
 import styles from './index.module.scss';
-import { useProducts } from '@/hooks/useProducts';
 
-import NewProductCard from '../../entities/NewProductCart';
-import Loader from '../../shared/Loader';
+import NewProductCard from '@/entities/NewProductCart';
+
+import { useProducts } from '@/shared/hooks/useProducts';
+import { Loader } from '@/shared/ui/Loader';
 
 const Products = () => {
   const { products, isLoading } = useProducts();
