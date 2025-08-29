@@ -1,15 +1,15 @@
 import axios from 'axios';
 
 import { PRODUCTS_PATH } from '@/shared/constants';
-import { Product } from '@/shared/types';
+import { GetProductResponse, GetProductsResponse } from '@/shared/types';
 
 class ProductService {
   getProducts() {
-    return axios.get(PRODUCTS_PATH);
+    return axios.get<GetProductsResponse>(PRODUCTS_PATH);
   }
 
-  getProductById(id: string) {
-    return axios.get<{ data: { products: Product } }>(`${PRODUCTS_PATH}/${id}`);
+  getProduct(id: number) {
+    return axios.get<GetProductResponse>(`${PRODUCTS_PATH}/${id}`);
   }
 }
 

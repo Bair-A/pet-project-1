@@ -59,3 +59,7 @@ export type GetProductsResponse = {
   skip: number;
   total: number;
 };
+
+export type GetProductResponse = {
+  data: Product;
+};

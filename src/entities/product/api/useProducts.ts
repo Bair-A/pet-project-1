@@ -5,7 +5,7 @@ import { AxiosResponse } from 'axios';
 import { GetProductsResponse, Product } from '@/shared/types';
 
 export function useProducts() {
-  const { data, isLoading, error } = useQuery<
+  const { data, isLoading, error, isSuccess } = useQuery<
     AxiosResponse<GetProductsResponse>,
     Error,
     Product[]
@@ -17,5 +17,5 @@ export function useProducts() {
     refetchOnWindowFocus: false
   });
 
-  return { products: data, isLoading, error };
+  return { products: data, isLoading, error, isSuccess };
 }
