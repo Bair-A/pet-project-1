@@ -1,5 +1,2 @@
-import Main from '@/pages/Main';
-
-export default function Home() {
-  return <Main />;
-}
+export { default } from '@/pages/main/Main';
+export * from '@/pages/main/Main';

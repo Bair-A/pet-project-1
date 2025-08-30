@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './index.module.scss';
+import styles from './Main.module.scss';
 
 import HeaderSlider from '@/widgets/HeaderSlider';
 

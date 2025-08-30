@@ -1,7 +1,2 @@
-'use client';
-
-import Auth from '@/features/Auth';
-
-export default function Login() {
-  return <Auth />;
-}
+export { default } from '@/pages/login/Login';
+export * from '@/pages/login/Login';
