@@ -13,6 +13,13 @@
   z-index: 9999;
 }
 
+.inlineWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
 .spinner {
   width: 48px;
   height: 48px;

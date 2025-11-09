@@ -4,8 +4,8 @@ import { PRODUCTS_PATH } from '@/shared/constants';
 import { GetProductResponse, GetProductsResponse } from '@/shared/types';
 
 class ProductService {
-  getProducts() {
-    return axios.get<GetProductsResponse>(PRODUCTS_PATH);
+  getProducts(params?: { limit?: number; skip?: number }) {
+    return axios.get<GetProductsResponse>(PRODUCTS_PATH, { params });
   }
 
   getProduct(id: number) {

@@ -16,6 +16,23 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  /* vertically center within slide */
+  height: 100%;
+  justify-content: center;
+}
+
+.content h2 {
+  font-weight: 800;
+  font-size: clamp(24px, 4vw, 40px);
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.content p {
+  font-size: clamp(14px, 2vw, 18px);
+  max-width: 56ch;
+  opacity: 0.95;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
 .overlay {

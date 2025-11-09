@@ -2,9 +2,15 @@
 
 import styles from './Loader.module.scss';
 
-export const Loader = () => {
+type LoaderProps = {
+  variant?: 'overlay' | 'inline';
+};
+
+export const Loader = ({ variant = 'overlay' }: LoaderProps) => {
+  const wrapperClass =
+    variant === 'overlay' ? styles.spinnerWrapper : styles.inlineWrapper;
   return (
-    <div className={styles.spinnerWrapper}>
+    <div className={wrapperClass}>
       <div className={styles.spinner} aria-label='Loading...' />
     </div>
   );

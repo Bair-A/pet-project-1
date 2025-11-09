@@ -17,18 +17,18 @@ import slideImg3 from '@/shared/assets/images/headerSlider/slide_3.webp';
 const slides = [
   {
     image: slideImg1.src,
-    title: 'Заголовок 1',
-    text: 'Текст слайда 1'
+    title: 'Up to 50% off new arrivals',
+    text: 'This week only — don’t miss out'
   },
   {
     image: slideImg2.src,
-    title: 'Заголовок 2',
-    text: 'Текст слайда 2'
+    title: 'Electronics −30%',
+    text: 'Phones, laptops and accessories at great prices'
   },
   {
     image: slideImg3.src,
-    title: 'Заголовок 3',
-    text: 'Текст слайда 3'
+    title: 'Bonus points & cashback',
+    text: 'Earn up to 10% back on every purchase'
   }
 ];
 
