@@ -34,7 +34,7 @@ const slides = [
 
 const HeaderSlider = () => {
   return (
-    <div style={{ width: '100%', maxHeight: '500px', overflow: 'hidden' }}>
+    <div className={styles.wrapper}>
       <Swiper
         modules={[Navigation, Pagination, A11y, Autoplay]}
         loop

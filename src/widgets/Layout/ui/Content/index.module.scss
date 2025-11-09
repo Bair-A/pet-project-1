@@ -1,4 +1,7 @@
 .layout {
   flex-grow: 1;
-  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: calc(var(--header-height) + 2rem) 1rem 2rem;
 }

@@ -1,31 +1,45 @@
 :root {
+  /* Base palette */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827; /* slate-900 */
 
-  --color-primary: #0d0d0d;
-  --color-primary-hover: #005bb5;
-  --color-primary-active: #003f7f;
+  /* Brand */
+  --color-primary: #2563eb; /* blue-600 */
+  --color-primary-hover: #1d4ed8; /* blue-700 */
+  --color-primary-active: #1e40af; /* blue-800 */
+  --color-primary-text: #ffffff;
 
-  --color-primary-fixed: #0d0d0d;
+  /* Secondary (typo kept to match existing usage) */
+  --color-second-pimary: #0ea5e9; /* sky-500 */
+  --color-second-pimary-hover: #0284c7; /* sky-600 */
+  --color-second-pimary-active: #0369a1; /* sky-700 */
 
-  --color-primary-text: #0d0d0d;
+  /* Fixed/textual accents */
+  --color-primary-fixed: #111827; /* for dark text on light */
 
-  --color-disabled: #ccc;
+  /* States */
+  --color-disabled: #cbd5e1; /* slate-300 */
+  --color-danger: #ef4444; /* red-500 */
+  --color-danger-hover: #dc2626; /* red-600 */
+  --color-danger-active: #b91c1c; /* red-700 */
+  --color-success: #16a34a; /* green-600 */
+  --color-success-hover: #15803d; /* green-700 */
+  --color-success-active: #166534; /* green-800 */
 
-  --color-danger: #d9534f;
-  --color-danger-hover: #b00000;
-  --color-danger-active: #7a0000;
-
-  --color-success: #699d2a;
-  --color-success-hover: #1e874d;
-  --color-success-active: #16663a;
+  /* Layout */
+  --header-height: 64px;
 }
 
 html.dark {
-  --background: #121212;
-  --color-primary-text: #fff;
+  --background: #0f172a; /* slate-900 */
+  --foreground: #e5e7eb; /* slate-200 */
 
-  --color-primary: #fff;
+  /* Slightly brighter brand for dark bg */
+  --color-primary: #60a5fa; /* blue-400 */
+  --color-primary-hover: #3b82f6; /* blue-500 */
+  --color-primary-active: #2563eb; /* blue-600 */
+
+  --color-primary-text: #ffffff;
 }
 
 html,

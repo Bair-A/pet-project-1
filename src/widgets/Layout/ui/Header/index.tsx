@@ -16,13 +16,13 @@ import ThemeToggle from '@/features/ThemeToggle';
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Link className={styles.logo} href='/public'>
+      <Link className={styles.logo} href='/'>
         Logo
       </Link>
       <div className={styles.menu}>
         <SignedOut>
           <SignInButton mode={'modal'}>
-            <span className={styles.signButton}>Sign in</span>
+            <span className={`${styles.signButton} ${styles.signIn}`}>Sign in</span>
           </SignInButton>
         </SignedOut>
         <SignedIn>

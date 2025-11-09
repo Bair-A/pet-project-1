@@ -1,9 +1,11 @@
 .footer {
-  background-color: #f8f9fa;
-  padding: 20px;
+  background-color: rgb(from var(--background) r g b / 0.75);
+  border-top: 1px solid rgb(from var(--foreground) r g b / 0.1);
+  padding: 16px;
   text-align: center;
   font-size: 14px;
-  color: #6c757d;
+  color: var(--foreground);
+  opacity: 0.85;
   width: 100%;
 
   a {

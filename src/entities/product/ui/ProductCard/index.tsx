@@ -38,7 +38,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <p className={styles.brand}>Brand: {brand}</p>
         <div className={styles.priceWrapper}>
           <span className={styles.price}>{priceFormatted}</span>
-          <span className={styles.discount}> - {discountPercentage}%</span>
+          <span className={styles.discount}>−{discountPercentage}%</span>
         </div>
         <p className={styles.rating}>⭐ {rating} / 5</p>
         {isAuthenticated && (
