@@ -1,7 +1,7 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { AxiosResponse } from 'axios';
 
-import { productService } from '@/services/product.service';
+import { productService } from '@/services/productService';
 import { GetProductsResponse, Product } from '@/shared/types';
 
 export function useInfiniteProducts(limit = 12) {

@@ -5,12 +5,14 @@ import styles from './index.module.scss';
 import FallBackImageIcon from '@/shared/assets/icons/FallBackImageIcon';
 import { Product } from '@/shared/types';
 import { formatPrice } from '@/shared/utils';
+import { useCartAddItem } from '@/app/store/cart';
 
 type ProductCardProps = {
   product: Product;
 };
 
 const NewProductCard = ({ product }: ProductCardProps) => {
+  const addToCart = useCartAddItem();
   const {
     title,
     price,
@@ -53,7 +55,12 @@ const NewProductCard = ({ product }: ProductCardProps) => {
           {availabilityStatus}
         </p>
         <div className={styles.actions}>
-          <button className={styles.addToCart}>Add to Cart</button>
+          <button
+            className={styles.addToCart}
+            onClick={() => addToCart(product, 1)}
+          >
+            Add to Cart
+          </button>
           <button className={styles.buyNow}>Buy Now</button>
         </div>
       </div>

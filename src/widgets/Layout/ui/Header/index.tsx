@@ -12,8 +12,11 @@ import {
 } from '@clerk/nextjs';
 
 import ThemeToggle from '@/features/ThemeToggle';
+import { useCartCount } from '@/app/store/cart';
 
 const Header = () => {
+  const cartCount = useCartCount();
+
   return (
     <header className={styles.header}>
       <Link className={styles.logo} href='/'>
@@ -31,6 +34,7 @@ const Header = () => {
             <span className={styles.signButton}>Sign out</span>
           </SignOutButton>
         </SignedIn>
+        <span className={styles.signButton}>Cart ({cartCount})</span>
         <ThemeToggle />
       </div>
     </header>

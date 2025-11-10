@@ -63,3 +63,17 @@ export type GetProductsResponse = {
 export type GetProductResponse = {
   data: Product;
 };
+
+// Cart
+export type CartItem = {
+  product: Product;
+  quantity: number;
+};
+
+export interface CartState {
+  items: CartItem[];
+  addItem: (product: Product, qty?: number) => void;
+  removeItem: (productId: number) => void;
+  decrementItem: (productId: number) => void;
+  clear: () => void;
+}

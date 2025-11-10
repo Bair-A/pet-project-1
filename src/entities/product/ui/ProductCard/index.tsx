@@ -1,10 +1,11 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useCallback } from 'react';
 
 import styles from './index.module.scss';
 
 import { useIsAuthenticated } from '@/app/store/auth';
+import { useCartAddItem } from '@/app/store/cart';
 
 import FallBackImageIcon from '@/shared/assets/icons/FallBackImageIcon';
 import { Product } from '@/shared/types';
@@ -16,10 +17,15 @@ type ProductCardProps = {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const isAuthenticated = useIsAuthenticated();
+  const addToCart = useCartAddItem();
   const { title, category, price, discountPercentage, rating, images, brand } =
     product;
 
   const priceFormatted = useMemo(() => formatPrice(price, 'USD'), [price]);
+
+  const onAddToCart = useCallback(() => {
+    addToCart(product, 1);
+  }, [addToCart, product]);
 
   return (
     <div className={styles.card}>
@@ -42,7 +48,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
         <p className={styles.rating}>⭐ {rating} / 5</p>
         {isAuthenticated && (
-          <button className={styles.addToCart}>add to cart</button>
+          <button className={styles.addToCart} onClick={onAddToCart}>
+            add to cart
+          </button>
         )}
       </div>
     </div>
