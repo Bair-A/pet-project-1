@@ -34,7 +34,7 @@ const Header = () => {
             <span className={styles.signButton}>Sign out</span>
           </SignOutButton>
         </SignedIn>
-        <span className={styles.signButton}>Cart ({cartCount})</span>
+        <Link className={styles.signButton} href='/cart'>Cart ({cartCount})</Link>
         <ThemeToggle />
       </div>
     </header>

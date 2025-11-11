@@ -1,0 +1,115 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.empty {
+  opacity: 0.7;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  grid-template-areas: 'thumb info price';
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border-color, rgba(0,0,0,0.1));
+  border-radius: 8px;
+}
+
+.thumb {
+  grid-area: thumb;
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: rgba(0,0,0,0.04);
+}
+
+.info {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.meta {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.price {
+  grid-area: price;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.qtyBtn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color, rgba(0,0,0,0.15));
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.qty {
+  min-width: 24px;
+  text-align: center;
+}
+
+.remove {
+  margin-left: 8px;
+  border: none;
+  background: transparent;
+  color: #c43b3b;
+  cursor: pointer;
+}
+
+.total {
+  padding-top: 12px;
+  margin-top: 8px;
+  border-top: 1px dashed var(--border-color, rgba(0,0,0,0.1));
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.clearButton {
+  padding: 10px;
+}
+
+.clearButton:hover {
+  cursor: pointer;
+}
+
