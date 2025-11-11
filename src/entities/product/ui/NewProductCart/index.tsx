@@ -2,10 +2,11 @@
 
 import styles from './index.module.scss';
 
+import { useCartAddItem } from '@/app/store/cart';
+
 import FallBackImageIcon from '@/shared/assets/icons/FallBackImageIcon';
 import { Product } from '@/shared/types';
 import { formatPrice } from '@/shared/utils';
-import { useCartAddItem } from '@/app/store/cart';
 
 type ProductCardProps = {
   product: Product;
@@ -61,7 +62,6 @@ const NewProductCard = ({ product }: ProductCardProps) => {
           >
             Add to Cart
           </button>
-          <button className={styles.buyNow}>Buy Now</button>
         </div>
       </div>
     </div>

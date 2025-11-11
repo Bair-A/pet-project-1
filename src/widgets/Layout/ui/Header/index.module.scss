@@ -34,7 +34,9 @@
 }
 
 .signButton {
-  color: var(--color-primary-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   &:hover {
     cursor: pointer;
     text-decoration: underline;
@@ -129,7 +131,8 @@
 }
 
 /* Explicit class to ensure CSS module exports the name */
-.signIn {}
+.signIn {
+}
 
 /* Make only the Sign in text dark in light theme */
 :global(html:not(.dark)) :local(.signIn) {

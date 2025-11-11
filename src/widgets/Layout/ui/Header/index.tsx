@@ -10,9 +10,11 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs';
+import { ShoppingCart } from 'lucide-react';
+
+import { useCartCount } from '@/app/store/cart';
 
 import ThemeToggle from '@/features/ThemeToggle';
-import { useCartCount } from '@/app/store/cart';
 
 const Header = () => {
   const cartCount = useCartCount();
@@ -25,7 +27,9 @@ const Header = () => {
       <div className={styles.menu}>
         <SignedOut>
           <SignInButton mode={'modal'}>
-            <span className={`${styles.signButton} ${styles.signIn}`}>Sign in</span>
+            <span className={`${styles.signButton} ${styles.signIn}`}>
+              Sign in
+            </span>
           </SignInButton>
         </SignedOut>
         <SignedIn>
@@ -34,7 +38,10 @@ const Header = () => {
             <span className={styles.signButton}>Sign out</span>
           </SignOutButton>
         </SignedIn>
-        <Link className={styles.signButton} href='/cart'>Cart ({cartCount})</Link>
+        <Link className={styles.signButton} href='/cart'>
+          {' '}
+          <ShoppingCart size={20} /> ({cartCount})
+        </Link>
         <ThemeToggle />
       </div>
     </header>

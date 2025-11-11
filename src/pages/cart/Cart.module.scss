@@ -105,6 +105,30 @@
   font-weight: 600;
 }
 
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkout {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color, rgba(0,0,0,0.15));
+  background: var(--button-bg, #111);
+  color: #fff;
+  cursor: pointer;
+}
+
+.clearButton {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color, rgba(0,0,0,0.15));
+  background: transparent;
+  cursor: pointer;
+}
+
 .clearButton {
   padding: 10px;
 }
@@ -112,4 +136,3 @@
 .clearButton:hover {
   cursor: pointer;
 }
-

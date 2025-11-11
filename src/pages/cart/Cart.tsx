@@ -11,6 +11,7 @@ import {
 } from '@/app/store/cart';
 
 import { formatPrice } from '@/shared/utils';
+import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
 
 const Cart = () => {
   const items = useCartItems();
@@ -85,10 +86,16 @@ const Cart = () => {
             <span>Total:</span>
             <span>{formatPrice(totalCents, 'USD')}</span>
           </div>
-          <div>
-            <button className={styles.clearButton} onClick={clear}>
-              Clear cart
-            </button>
+          <div className={styles.actions}>
+            <button className={styles.clearButton} onClick={clear}>Clear cart</button>
+            <SignedIn>
+              <button className={styles.checkout}>Checkout</button>
+            </SignedIn>
+            <SignedOut>
+              <SignInButton mode={'modal'}>
+                <span className={styles.checkout}>Sign in to order</span>
+              </SignInButton>
+            </SignedOut>
           </div>
         </>
       )}
