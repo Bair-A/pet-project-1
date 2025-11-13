@@ -11,6 +11,7 @@ import {
 } from '@/app/store/cart';
 
 import { formatPrice } from '@/shared/utils';
+import Link from 'next/link';
 import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
 
 const Cart = () => {
@@ -89,7 +90,7 @@ const Cart = () => {
           <div className={styles.actions}>
             <button className={styles.clearButton} onClick={clear}>Clear cart</button>
             <SignedIn>
-              <button className={styles.checkout}>Checkout</button>
+              <Link href='/checkout' className={styles.checkout}>Checkout</Link>
             </SignedIn>
             <SignedOut>
               <SignInButton mode={'modal'}>

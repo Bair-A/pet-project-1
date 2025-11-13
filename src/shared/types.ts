@@ -77,3 +77,17 @@ export interface CartState {
   decrementItem: (productId: number) => void;
   clear: () => void;
 }
+
+// Checkout
+export interface CheckoutForm {
+  fullName: string;
+  phone: string; // masked value, e.g. "+7 (900) 000-00-00"
+  isDelivery: boolean;
+  address: string;
+}
+
+export interface CheckoutState {
+  form: CheckoutForm;
+  setForm: (patch: Partial<CheckoutForm>) => void;
+  clearForm: () => void;
+}
